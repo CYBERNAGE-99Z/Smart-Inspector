@@ -86,5 +86,5 @@ Smart_Inspector/
 
 ---
 
-![Detection Example](train_batch481.jpg)
+![Detection Example](assets/train_batch481.jpg)
 
