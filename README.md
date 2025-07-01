@@ -27,7 +27,6 @@ The dataset used is from the official **MVTec AD (Anomaly Detection)** dataset:
 🔗 **Dataset download**:  
 👉 [https://www.mvtec.com/company/research/datasets/mvtec-ad](https://www.mvtec.com/company/research/datasets/mvtec-ad)
 
----
 
 ## 📁 Folder Structure
 
@@ -41,46 +40,50 @@ Smart_Inspector/
 │       ├── images/train/
 │       └── labels/train/
 
-🚀 How It Works
+```
 
-    🔍 Preprocessing:
 
-        Converts segmentation masks into YOLO-style bounding box annotations
+## 🚀 How It Works
 
-        Organizes the dataset for YOLO training
+### 🔍 Preprocessing
+- Converts segmentation masks (`*_mask.png`) into YOLO-style bounding box annotations.
+- Organizes the dataset into a YOLOv8-compatible folder structure (`images/train/` and `labels/train/`).
 
-    🧠 Model Training:
+### 🧠 Model Training
+- Trains a YOLOv8 model (`yolov8n.pt`) on the labeled dataset.
+- Fine-tunes the model to detect the following defect classes:
+  - `bent`
+  - `color`
+  - `flip`
+  - `scratch`
 
-        Trains a YOLOv8 model (yolov8n.pt) on the labeled dataset
+### 🧪 Prediction
+- Uses the trained model to detect defects on unseen test images.
+- Outputs annotated images with bounding boxes, class labels, and confidence scores.
 
-        Fine-tunes it to detect bent, color, flip, and scratch defects
+### 🌐 Web App
+- A simple and interactive web interface built with **Streamlit**.
+- Users can upload images and instantly visualize defect detections in the browser.
 
-    🧪 Prediction:
+---
 
-        Predicts defects on unseen test images using trained model
+## ⚙️ Technologies Used
 
-        Outputs annotated images with bounding boxes
+- **Python** – Core programming language.
+- **YOLOv8** (via `ultralytics`) – Object detection framework.
+- **OpenCV** – Used for image processing and mask-to-bounding box conversion.
+- **NumPy** – For numerical operations and image array handling.
+- **Streamlit** – For building a responsive web-based UI.
 
-    🌐 Web App:
+---
 
-        Users can upload images via the Streamlit app
+## 🧠 Credits
 
-        Get instant visual feedback with defect labels and confidence scores
+- **Dataset**: [MVTec AD - Anomaly Detection Dataset](https://www.mvtec.com/company/research/datasets/mvtec-ad)
+- **YOLOv8**: [Ultralytics GitHub Repository](https://github.com/ultralytics/ultralytics)
 
-⚙️ Technologies Used
 
-    Python
+---
 
-    YOLOv8 (via ultralytics)
+![Detection Example](example_images/001.png)
 
-    OpenCV – image processing
-
-    NumPy – data manipulation
-
-    Streamlit – web interface
-
-🧠 Credits
-
-    Dataset: MVTec AD - Anomaly Detection
-
-    YOLOv8: Ultralytics GitHub
