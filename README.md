@@ -35,6 +35,7 @@ Smart_Inspector/
 ├── best.pt                      # Trained YOLOv8 model
 ├── streamlit_app.py             # Web app (Streamlit interface)
 ├── main.ipynb  # Full training pipeline
+├── data.yaml
 ├── datasets/
 │   └── metal_nut_yolo/          # YOLO-compatible dataset
 │       ├── images/train/
@@ -85,5 +86,5 @@ Smart_Inspector/
 
 ---
 
-![Detection Example](example_images/001.png)
+![Detection Example](train_batch481.jpg)
 
