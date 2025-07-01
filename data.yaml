@@ -1,0 +1,9 @@
+path: C:\Users\amban\Smart_Inspector\datasets\metal_nut_yolo
+train: images/train
+val: images/train  # since no validation split for now
+
+names:
+  0: bent
+  1: color
+  2: flip
+  3: scratch
